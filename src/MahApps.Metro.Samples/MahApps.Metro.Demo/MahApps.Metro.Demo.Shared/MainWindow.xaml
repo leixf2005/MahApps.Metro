@@ -191,7 +191,7 @@
                 <MenuItem Command="{Binding ShowProgressDialogCommand}" Header="Show ProgressDialog via VM" />
                 <MenuItem Command="{Binding ShowCustomDialogCommand}" Header="Show CustomDialog via VM" />
             </MenuItem>
-            <MenuItem Header="Window">
+            <MenuItem Header="_Window">
                 <MenuItem Header="ShowTitleBar"
                           IsCheckable="True"
                           IsChecked="{Binding Path=ShowMyTitleBar, UpdateSourceTrigger=PropertyChanged}" />

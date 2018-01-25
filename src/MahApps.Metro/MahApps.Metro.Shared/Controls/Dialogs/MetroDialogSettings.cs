@@ -13,8 +13,8 @@ namespace MahApps.Metro.Controls.Dialogs
         {
             this.OwnerCanCloseWithDialog = false;
 
-            this.AffirmativeButtonText = "OK";
-            this.NegativeButtonText = "Cancel";
+            this.AffirmativeButtonText = "_OK";
+            this.NegativeButtonText = "_Cancel";
 
             this.ColorScheme = MetroDialogColorScheme.Theme;
             this.AnimateShow = this.AnimateHide = true;

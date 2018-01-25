@@ -978,6 +978,22 @@ namespace MahApps.Metro.Controls
 
             // BorderlessWindowBehavior initialization has to occur in constructor. Otherwise the load event is fired early and performance of the window is degraded.
             this.InitializeStylizedBehaviors();
+
+            AccessKeyManager.AddAccessKeyPressedHandler(this, HandleScopedElementAccessKeyPressed);
+        }
+
+        private void HandleScopedElementAccessKeyPressed(object sender, AccessKeyPressedEventArgs e)
+        {
+            if (this.IsAnyDialogOpen && e.Target != null)
+            {
+                var owner = e.Target.TryFindParent<BaseMetroDialog>();
+                if (null == owner)
+                {
+                    e.Target = null;
+                }
+
+                e.Handled = true;
+            }
         }
 
         /// <summary>
