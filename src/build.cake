@@ -92,7 +92,7 @@ Task("Build")
 });
 
 Task("Paket-Pack")
-    //.WithCriteria(ShouldRunRelease())
+    .WithCriteria(() => !isPullRequest))
     .Does(() =>
 {
 	EnsureDirectoryExists(Directory(publishDir));
@@ -100,7 +100,7 @@ Task("Paket-Pack")
 });
 
 Task("Zip-Demos")
-    //.WithCriteria(ShouldRunRelease())
+    .WithCriteria(() => !isPullRequest))
     .Does(() =>
 {
 	EnsureDirectoryExists(Directory(publishDir));
@@ -109,7 +109,6 @@ Task("Zip-Demos")
 });
 
 Task("Unit-Tests")
-    //.WithCriteria(ShouldRunRelease())
     .Does(() =>
 {
     XUnit(
